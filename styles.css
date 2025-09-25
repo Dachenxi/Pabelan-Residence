@@ -1,3 +1,47 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.header img {
+    width: auto;
+    height: 35px;
+}
+.header {
+    font-family: Alan Sans, sans-serif;
+    font-weight: 400;
+    background-color: #e63946;
+    padding: 15px;
+    color: #f1faee;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 0 5px #e63946;
+}
+
+.header .menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header .menu a {
+    font-size: 21px;
+    text-decoration: none;
+    color: #f1faee;
+    border-bottom: 0 solid #f1faee;
+}
+
+.header .menu a:hover {
+    border-bottom: 3px solid #f1faee;
+    transition: border-bottom-width 0.10s ease-in;
+}
+
+.content img {
+    width: 100%;
+    height: auto;
+}
+
 h1 {
     color: red;
     font-size: 50px;
