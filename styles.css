@@ -1,48 +1,104 @@
-body {
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: hsl(60, 52%, 90%);
+    --secondary-color: hsl(82, 39%, 30%);
+    --accent-color: hsl(11, 70%, 65%);
+    --text-color: hsl(0, 0%, 29%);
+    --secondary-text-color:  hsl(43, 3%, 97%);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Alan Sans", sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    text-decoration: none;
 }
 
 .header img {
-    width: auto;
-    height: 35px;
+    height: 45px;
 }
-.header {
-    font-family: Alan Sans, sans-serif;
-    font-weight: 400;
-    background-color: #e63946;
-    padding: 15px;
-    color: #f1faee;
+
+.navbar-container {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-    box-shadow: 0 0 5px #e63946;
-}
-
-.header .menu {
-    display: flex;
-    gap: 20px;
     align-items: center;
+    margin: auto;
 }
 
-.header .menu a {
-    font-size: 21px;
+.header .btn-primary {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.header .btn-primary:hover {
+    background-color: var(--secondary-color);
+    color: var(--secondary-text-color);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px var(--secondary-color);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
     text-decoration: none;
-    color: #f1faee;
-    border-bottom: 0 solid #f1faee;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
 }
 
-.header .menu a:hover {
-    border-bottom: 3px solid #f1faee;
-    transition: border-bottom-width 0.10s ease-in;
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
 }
 
-.content img {
+.nav-link:hover::after,
+.nav-link.active::after {
     width: 100%;
-    height: auto;
 }
 
-h1 {
-    color: red;
-    font-size: 50px;
+[id] {
+    scroll-margin-top: 80px;
 }

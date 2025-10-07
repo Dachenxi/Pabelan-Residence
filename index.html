@@ -7,20 +7,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css"/>
 </head>
     <body>
         <div class="header">
-            <div class="logo">
-                <img src="images/LogoNoTeks.png" alt="Logo PR">
-            </div>
-            <div class="menu">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+            <div class="navbar-container">
+                <div class="logo">
+                    <img src="images/LogoNoTeks.png" alt="Logo PR">
+                    <span>Pabelan<br>Residence</span>
+                </div>
+                <ul class="menu" id="navbar-menu">
+                    <li><a href="#Home" class="nav-link active">Home</a></li>
+                    <li><a href="#Properties" class="nav-link">Properties</a></li>
+                    <li><a href="#Services" class="nav-link">Services</a></li>
+                    <li><a href="#Agent" class="nav-link">Agent</a></li>
+                    <li><a href="#Contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="search">
+                    <button class="btn-primary">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        Search
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="content">
-            <img src="images/Brosur.jpg" alt="HellNaw">
+        <div class="home" id="Home">
+            <h1>Welcome to Pabelan Residence</h1>
         </div>
+        <div class="content" id="Properties">
+            <img src="images/Brosur.jpg" alt="Pabelan Residence Brosur">
+        </div>
+        <div class="services" id="Services">
+            <h1>Our Services</h1>
+        </div>
+        <div class="Agent" id="Agent">
+            <h1>Our Agents</h1>
+        </div>
+        <div class="Contact" id="Contact">
+            <h1>Contact</h1>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
