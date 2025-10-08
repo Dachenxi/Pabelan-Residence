@@ -12,10 +12,6 @@
     --secondary-text-color:  hsl(43, 3%, 97%);
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: "Alan Sans", sans-serif;
     line-height: 1.6;
@@ -98,6 +94,11 @@ body {
 .nav-link.active::after {
     width: 100%;
 }
+
+.content img {
+    width: 100%;
+}
+
 
 [id] {
     scroll-margin-top: 80px;
