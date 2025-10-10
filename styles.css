@@ -165,6 +165,7 @@ input {
 
 .home-slide.active .home-content .title,
 .home-content .title{
+    line-height: 4rem;
     font-size: 4rem;
     font-weight: 700;
     animation: fadeInUp 1s ease;
@@ -362,6 +363,20 @@ input {
 
     .home-nav {
         top: 30%;
+    }
+
+    .home-content {
+        top: 15%;
+    }
+
+    .home-slide.active .home-content .title,
+    .home-content .title{
+        font-size: 2.5rem;
+    }
+
+    .home-slide.active .home-content .subtitle,
+    .home-content .subtitle{
+        font-size: 1rem;
     }
 }
 [id] {

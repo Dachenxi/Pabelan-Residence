@@ -79,10 +79,12 @@
         <div class="search-filter-container">
             <div class="filter-items">
                 <i class="fa-solid fa-magnifying-glass-location"></i>
+                <label for="locationFilter"></label>
                 <input type="text" name="locationFilter" id="locationFilter" placeholder="Lokasi">
             </div>
             <div class="filter-items">
                 <i class="fa-solid fa-building-magnifying-glass"></i>
+                <label for="filterType"></label>
                 <select name="filterType" id="filterType">
                     <option value="">Tipe Rumah</option>
                     <option value="Akasia">Tipe Akasia (45/90)</option>
@@ -94,8 +96,9 @@
             </div>
             <div class="filter-items">
                 <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                <label for="filterPrice"></label>
                 <select name="filterPrice" id="filterPrice">
-                    <option value="">Range Harga</option>
+                    <option value="0-500">Range Harga</option>
                     <option value="0-500">$0 - $500K</option>
                     <option value="500-1000">$500K - $1M</option>
                     <option value="1000-2000">$1M - $2M</option>
