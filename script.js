@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     initNavigation();
     initMenuSlider();
     initFilterButton();
+    initStats()
 })
 
 function initNavigation() {
@@ -100,4 +101,33 @@ function initFilterButton() {
             tab.classList.add('active');
         });
     });
+}
+
+function initStats() {
+    const statsNumber = document.querySelectorAll('.stats-number')
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = parseInt(entry.target.getAttribute('data-target'))
+                animateCounter(entry.target, target);
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+    
+    statsNumber.forEach(stat => observer.observe(stat));
+}
+
+function animateCounter(element, target) {
+    let current = 0;
+    const increment = target / 50;
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target.toLocaleString();
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current).toLocaleString();
+        }
+    }, 30);
 }

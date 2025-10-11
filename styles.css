@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +6,7 @@
 }
 
 :root {
-    --main-font: 'Alan Sans';
+    --main-font: 'Outfit';
     --main-color: hsl(60, 52%, 90%);
     --secondary-color: hsl(82, 39%, 30%);
     --accent-color: hsl(11, 70%, 65%);
@@ -246,13 +247,14 @@ input {
 }
 
 .search-filter-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
 .filter-items {
     display: flex;
+    flex-grow: 1;
     align-items: center;
     gap: 0.5rem;
     background: var(--main-color);
@@ -277,6 +279,7 @@ input {
 
 .btn-search {
     font-size: 1rem;
+    flex-grow: 1;
     padding: 0.75rem;
     background-color: var(--main-color);
     color: var(--text-color);
@@ -325,19 +328,64 @@ input {
     overflow: hidden;
 }
 
+/* Stats Section */
+.stats {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    padding: 2rem 4rem;
+}
+.stats-container {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.stats-item {
+    flex-grow: 1;
+    min-width: 275px;
+    max-width: 275px;
+}
+
+.stats-item i {
+    font-size: 3rem;
+    color: var(--icon-color);
+    margin-bottom: 0.5rem;
+}
+
+.stats-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.stats-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
 @media (max-width: 768px) {
     .menu {
-        display: none;
         flex-direction: column;
         position: absolute;
-        top: 80px;
+        top: 85px;
         right: 1rem;
-        background-color: white;
+        background: white;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         width: 200px;
         padding: 1rem 0;
         z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    }
+
+    .menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0); /* Kembalikan ke posisi normal */
     }
 
     .menu li {
@@ -377,6 +425,10 @@ input {
     .home-slide.active .home-content .subtitle,
     .home-content .subtitle{
         font-size: 1rem;
+    }
+
+    .home-nav {
+        display: none;
     }
 }
 [id] {
