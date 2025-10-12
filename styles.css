@@ -310,10 +310,102 @@ input {
     overflow: hidden;
 }
 
+/* Testimonial Section */
 .testimonial {
+    color: var(--secondary-text-color);
+    padding: 1rem 2.4rem;
+    background-color: var(--secondary-color);
+}
+
+.testimonial-header {
+    text-align: center;
+}
+.testimonial-header h2 {
+    font-size: 2rem;
+}
+
+.testimonial-header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+.testimonial-slider {
     position: relative;
-    height: calc(100vh - 75px);
     overflow: hidden;
+}
+
+.testimonial-item {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    margin: 1rem auto;
+}
+
+.testimonial-item.active {
+    display: block;
+    animation: fadeInUp 1s ease;
+}
+
+.testimonial-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    overflow: hidden;
+    border: 4px solid var(--accent-color);
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-text {
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.testimonial-role {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.testimonial-rating {
+    margin-top: 1.1rem;
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.testimonial-slider-controls {
+    justify-content: center;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.testimonial-dot {
+    position: relative;
+    bottom: 70%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.testimonial-dot.active {
+    background: var(--main-color);
+    width: 30px;
+    border-radius: 6px;
 }
 
 .agent {

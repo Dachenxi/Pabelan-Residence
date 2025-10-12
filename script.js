@@ -1,9 +1,37 @@
+const testimonialDict = [
+    {
+        id: 1,
+        name: "Muchammad Abdurohim",
+        role: "Bapak Rumah Tangga",
+        image: "https://i.ibb.co.com/VYvPWhhd/Ohim.jpg",
+        text: "Pabelan residence bukanlah sebuah hunian biasa. Dengan desain modern dan fasilitas lengkap, tempat ini memberikan kenyamanan maksimal bagi keluarga saya.",
+        rating: 5
+    },
+    {
+        id: 2,
+        name: "Giga Hidro Pratam Dwi Irwansyah Maulana",
+        role: "Property Investor",
+        image: "https://i.ibb.co.com/v6WBCvf4/image.png",
+        text: "Saya tau ini dari teman saya, dan ternyata memang benar. Pabelan residence memberikan pengalaman tinggal yang luar biasa dengan lingkungan yang asri dan fasilitas yang memadai.",
+        rating: 5
+    },
+    {
+        id: 3,
+        name: "Gibran Maulana",
+        role: "Perintis",
+        image: "https://i.ibb.co.com/SXKr9X8b/image.png",
+        text: "Rumah di Pabelan residence adalah pilihan tepat bagi saya yang menginginkan tempat tinggal di solo yang nyaman dan strategis. Lokasinya yang dekat dengan pusat kota membuat segala aktivitas menjadi lebih mudah.",
+        rating: 5
+    }
+]
+
 document.addEventListener("DOMContentLoaded", function() {
     initHamburgerMenu();
     initNavigation();
     initMenuSlider();
     initFilterButton();
-    initStats()
+    initStats();
+    initTestimonials()
 })
 
 function initNavigation() {
@@ -130,4 +158,44 @@ function animateCounter(element, target) {
             element.textContent = Math.floor(current).toLocaleString();
         }
     }, 30);
+}
+
+function initTestimonials() {
+    const slider = document.getElementById('testimonialSlider');
+    const dots = document.getElementById('testimonialSlideControls');
+
+    slider.innerHTML = testimonialDict.map((testimonial, index) => `
+    <div class="testimonial-item ${index === 0 ? 'active' : ''}">
+        <div class="testimonial-image">
+            <img src="${testimonial.image}" alt="${testimonial.name}">
+        </div>
+        <div class="testimonial-text">"${testimonial.text}"</div>
+        <div class="testimonial-author">${testimonial.name}</div>
+        <div class="testimonial-role">${testimonial.role}</div>
+        <div class="testimonial-rating">
+            ${'<i class="fa-solid fa-star"></i>'.repeat(testimonial.rating)}
+        </div>
+    </div>
+    `).join('');
+
+    dots.innerHTML = testimonialDict.map((_, index) => `
+        <span class="testimonial-dot ${index === 0 ? 'active' : ''}" onclick="showTestimonial(${index})"></span>
+    `).join('');
+
+    let currentTestimonial = 0;
+    setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % testimonialDict.length;
+        showTestimonial(currentTestimonial);
+    }, 6000);
+}
+
+function showTestimonial(index) {
+    const items = document.querySelectorAll('.testimonial-item');
+    const dots = document.querySelectorAll('.testimonial-dot');
+
+    items.forEach(item => item.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    items[index].classList.add('active');
+    dots[index].classList.add('active');
 }
