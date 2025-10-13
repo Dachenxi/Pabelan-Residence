@@ -35,6 +35,7 @@ input {
     top: 0;
     width: 100%;
     backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.4);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     padding: 10px;
 }
@@ -414,12 +415,127 @@ input {
     overflow: hidden;
 }
 
+/* Contact Section */
 .contact {
     position: relative;
-    height: calc(100vh - 75px);
+    height: auto;
     overflow: hidden;
+    background-color: var(--main-color);
 }
 
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem 2.4rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 5px;
+    align-items: flex-start;
+ }
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--icon-color);
+    margin-top: 3px;
+}
+
+.social-media {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-media a {
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    color: var(--secondary-text-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-media a:hover {
+    background: var(--accent-color);
+    box-shadow: 0 10px 20px var(--secondary-color);
+    transform: translateY(-5px);
+    color: var(--main-font);
+}
+
+
+.contact-header {
+    text-align: center;
+}
+.contact-header h2 {
+    font-size: 2rem;
+}
+.contact-header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+.contact-form {
+    background: var(--main-color);
+    padding: 2rem;
+    border-radius: 16px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.btn-primary {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+}
 /* Stats Section */
 .stats {
     background-color: var(--main-color);
