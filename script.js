@@ -9,7 +9,7 @@ const testimonialDict = [
     },
     {
         id: 2,
-        name: "Giga Hidro Pratam Dwi Irwansyah Maulana",
+        name: "Giga Hidro Pratama Dwi Irwansyah Maulana",
         role: "Property Investor",
         image: "https://i.ibb.co.com/v6WBCvf4/image.png",
         text: "Saya tau ini dari teman saya, dan ternyata memang benar. Pabelan residence memberikan pengalaman tinggal yang luar biasa dengan lingkungan yang asri dan fasilitas yang memadai.",
@@ -17,8 +17,8 @@ const testimonialDict = [
     },
     {
         id: 3,
-        name: "Gibran Maulana",
-        role: "Perintis",
+        name: "Gibran Maulana rakhabooming",
+        role: "Penerus Orang Tua",
         image: "https://i.ibb.co.com/SXKr9X8b/image.png",
         text: "Rumah di Pabelan residence adalah pilihan tepat bagi saya yang menginginkan tempat tinggal di solo yang nyaman dan strategis. Lokasinya yang dekat dengan pusat kota membuat segala aktivitas menjadi lebih mudah.",
         rating: 5
