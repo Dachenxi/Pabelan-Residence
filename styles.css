@@ -319,6 +319,7 @@ input {
 
 .stats-item {
     flex: 1;
+    min-width: 150px;
 }
 
 .stats-item i {
@@ -387,6 +388,7 @@ input {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
+    min-width: 125px;
 }
 
 .filter-btn.active,
@@ -632,6 +634,10 @@ input {
     background-color: var(--secondary-color);
 }
 
+.testimonial-container {
+    position: relative;
+}
+
 .testimonial-header {
     text-align: center;
 }
@@ -651,6 +657,7 @@ input {
     position: relative;
     overflow: hidden;
     max-width: 800px;
+    min-height: 450px;
     margin: 0 auto;
 }
 
@@ -711,6 +718,43 @@ input {
     margin-top: 2rem;
 }
 
+.testimonial-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgb(243, 243, 216, 0.6);
+    backdrop-filter: blur(10px);
+    border: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 3;
+    border-radius: 15px;
+}
+
+.testimonial-nav.prev {
+    left: 2rem;
+}
+.testimonial-nav.next {
+    right: 2rem;
+}
+
+.testimonial-nav:hover.prev {
+    background: var(--main-color);
+    color: var(--text-color);
+    transform: translateY(-50%) translateX(-5px);
+    box-shadow: 0 10px 20px var(--secondary-color);
+}
+
+.testimonial-nav:hover.next {
+    background: var(--main-color);
+    color: var(--text-color);
+    transform: translateY(-50%) translateX(5px);
+    box-shadow: 0 10px 20px var(--secondary-color);
+}
+
 .testimonial-dot {
     width: 12px;
     height: 12px;
@@ -763,7 +807,7 @@ input {
 
 .agent-card {
     flex: 1;
-    min-width: 150px;
+    min-width: 200px;
     background: var(--main-color);
     border-radius: 15px;
     overflow: hidden;
@@ -996,6 +1040,7 @@ input {
 
 .form-row label {
     flex: 1;
+    min-width: 150px;
 }
 
 .contact-form input,
@@ -1176,6 +1221,17 @@ input {
     .search-bar {
         width: 90%;
         padding: 1.5rem;
+    }
+
+    .stats-item {
+        margin-bottom: 1.2rem;
+    }
+
+    .testimonial-nav.prev {
+        top: 95%;
+    }
+    .testimonial-nav.next {
+        top: 95%;
     }
 
     .social-media {

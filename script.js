@@ -25,13 +25,17 @@ const testimonialDict = [
     }
 ]
 
+// Pindahkan timer ke scope global agar bisa diakses fungsi lain
+let autoPlayTimer;
+
 document.addEventListener("DOMContentLoaded", function() {
     initHamburgerMenu();
     initNavigation();
     initMenuSlider();
     initFilterButton();
     initStats();
-    initTestimonials()
+    initTestimonials();
+    initFilters()
 })
 
 function initNavigation() {
@@ -162,8 +166,10 @@ function animateCounter(element, target) {
 
 function initTestimonials() {
     const slider = document.getElementById('testimonialSlider');
-    const dots = document.getElementById('testimonialSlideControls');
-
+    const dotsContainer = document.getElementById('testimonialSlideControls');
+    const prevBtn = document.getElementById('testimonialPrev');
+    const nextBtn = document.getElementById('testimonialNext');
+    
     slider.innerHTML = testimonialDict.map((testimonial, index) => `
     <div class="testimonial-item ${index === 0 ? 'active' : ''}">
         <div class="testimonial-image">
@@ -178,15 +184,43 @@ function initTestimonials() {
     </div>
     `).join('');
 
-    dots.innerHTML = testimonialDict.map((_, index) => `
-        <span class="testimonial-dot ${index === 0 ? 'active' : ''}" onclick="showTestimonial(${index})"></span>
+    dotsContainer.innerHTML = testimonialDict.map((_, index) => `
+        <span class="testimonial-dot ${index === 0 ? 'active' : ''}" data-index="${index}"></span>
     `).join('');
+    
+    function resetAutoPlay() {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = setInterval(() => {
+            const currentActiveIndex = Array.from(slider.children).findIndex(item => item.classList.contains('active'));
+            const nextIndex = (currentActiveIndex + 1) % testimonialDict.length;
+            showTestimonial(nextIndex);
+        }, 6000);
+    }
+    
+    nextBtn.addEventListener('click', () => {
+        const currentActiveIndex = Array.from(slider.children).findIndex(item => item.classList.contains('active'));
+        const nextIndex = (currentActiveIndex + 1) % testimonialDict.length;
+        showTestimonial(nextIndex);
+        resetAutoPlay();
+    });
 
-    let currentTestimonial = 0;
-    setInterval(() => {
-        currentTestimonial = (currentTestimonial + 1) % testimonialDict.length;
-        showTestimonial(currentTestimonial);
-    }, 6000);
+    prevBtn.addEventListener('click', () => {
+        const currentActiveIndex = Array.from(slider.children).findIndex(item => item.classList.contains('active'));
+        const prevIndex = (currentActiveIndex - 1 + testimonialDict.length) % testimonialDict.length;
+        showTestimonial(prevIndex);
+        resetAutoPlay();
+    });
+
+    const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const index = parseInt(dot.dataset.index);
+            showTestimonial(index);
+            resetAutoPlay();
+        });
+    });
+    
+    resetAutoPlay();
 }
 
 function showTestimonial(index) {
@@ -198,4 +232,25 @@ function showTestimonial(index) {
 
     items[index].classList.add('active');
     dots[index].classList.add('active');
+}
+
+function initFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+        });
+    });
+
+    // Search tabs
+    const searchTabs = document.querySelectorAll('.search-tab');
+    searchTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            searchTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+        });
+    });
 }
