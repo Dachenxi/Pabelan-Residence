@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css"/>
 </head>
 <body>
+
+<!-- HEADER SECTION -->
 <div class="header">
     <div class="navbar-container">
         <div class="logo">
@@ -40,6 +42,7 @@
     </div>
 </div>
 
+<!-- HOME SECTION -->
 <div class="home" id="Home">
     <div class="home-carrousel">
         <div class="home-slide active" style="background-image: url('https://i.ibb.co.com/tM9qZJxq/125236-723-kondisi-terkini-rumah.jpg')">
@@ -67,6 +70,7 @@
     <button class="home-nav next" id="homeNext"><i class="fa-solid fa-chevron-right"></i></button>
     <button class="home-nav prev" id="homePrev"><i class="fa-solid fa-chevron-left"></i></button>
 
+    <!-- Search Bar -->
     <div class="search-bar">
         <div class="search-tabs-container">
             <button class="search-tab active"><i class="fa-solid fa-cart-shopping"></i> Beli</button>
@@ -107,6 +111,7 @@
     </div>
 </div>
 
+<!-- STATS SECTION -->
 <div class="stats">
     <div class="stats-container">
         <div class="stats-item">
@@ -127,35 +132,41 @@
     </div>
 </div>
 
+<!-- PROPERTIES SECTION -->
 <div class="content" id="Properties">
     <div class="container">
-            <div class="section-header">
-                <h2>Featured Properties</h2>
-                <p>Discover our handpicked selection of premium properties</p>
-            </div>
-            
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="house">Akasia</button>
-                <button class="filter-btn" data-filter="apartment">Bougenville</button>
-                <button class="filter-btn" data-filter="villa">Sapphire</button>
-                <button class="filter-btn" data-filter="land">Ruby</button>
-                <button class="filter-btn" data-filter="land">Diamond</button>
-            </div>
-
-            <div class="properties-grid" id="propertiesGrid">
-                <!-- Properties will be dynamically loaded -->
-            </div>
-
-            <div class="load-more">
-                <button class="btn-secondary" id="loadMore">Load More Properties</button>
-            </div>
+        <div class="section-header">
+            <h2>Featured Properties</h2>
+            <p>Discover our handpicked selection of premium properties</p>
         </div>
-    </section>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="house">Akasia</button>
+            <button class="filter-btn" data-filter="apartment">Bougenville</button>
+            <button class="filter-btn" data-filter="villa">Sapphire</button>
+            <button class="filter-btn" data-filter="land">Ruby</button>
+            <button class="filter-btn" data-filter="land">Diamond</button>
+        </div>
+
+        <div class="properties-grid" id="propertiesGrid">
+            <!-- Properties will be dynamically loaded -->
+        </div>
+
+        <div class="load-more">
+            <button class="btn-secondary" id="loadMore">Load More Properties</button>
+        </div>
+    </div>
 </div>
+
+<!-- SERVICES SECTION -->
 <div class="services" id="Services">
-    <h1>Our Services</h1>
+    <div class="container">
+        <h1>Our Services</h1>
+    </div>
 </div>
+
+<!-- TESTIMONIAL SECTION -->
 <div class="testimonial" id="Testimonial">
     <div class="testimonial-container">
         <div class="testimonial-header">
@@ -163,14 +174,237 @@
             <p>Apa yang dikatakan client tentang kami</p>
         </div>
         <div class="testimonial-slider" id="testimonialSlider">
-
+            <!-- Testimonials will be dynamically loaded -->
         </div>
         <div class="testimonial-slider-controls" id="testimonialSlideControls"></div>
     </div>
 </div>
+
+<!-- AGENT SECTION -->
 <div class="agent" id="Agent">
-    <h1>Our Agents</h1>
+    <div class="container">
+        <div class="agent-header">
+            <h2>Tim Agen Profesional Kami</h2>
+            <p>Bertemu dengan agen properti berpengalaman yang siap membantu Anda</p>
+        </div>
+        
+        <div class="agents-grid">
+            <!-- Agent 1 -->
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" alt="Agent Photo">
+                    <div class="agent-badge">Top Agent</div>
+                </div>
+                <div class="agent-info">
+                    <h3>Budi Santoso</h3>
+                    <p class="agent-title">Senior Property Consultant</p>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <i class="fa-solid fa-house-circle-check"></i>
+                            <span>45 Sold</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.9/5</span>
+                        </div>
+                    </div>
+                    <p class="agent-description">
+                        Spesialis properti residensial dengan pengalaman 8 tahun di industri real estate.
+                    </p>
+                    <div class="agent-contact">
+                        <a href="tel:+6281234567890" class="contact-btn">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                        <a href="mailto:budi@pabelanresidence.com" class="contact-btn">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/6281234567890" class="contact-btn" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent 2 -->
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="Agent Photo">
+                    <div class="agent-badge">Top Agent</div>
+                </div>
+                <div class="agent-info">
+                    <h3>Siti Rahayu</h3>
+                    <p class="agent-title">Property Investment Advisor</p>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <i class="fa-solid fa-house-circle-check"></i>
+                            <span>52 Sold</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fa-solid fa-star"></i>
+                            <span>5.0/5</span>
+                        </div>
+                    </div>
+                    <p class="agent-description">
+                        Ahli dalam investasi properti dan konsultasi pembiayaan dengan track record terbaik.
+                    </p>
+                    <div class="agent-contact">
+                        <a href="tel:+6281234567891" class="contact-btn">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                        <a href="mailto:siti@pabelanresidence.com" class="contact-btn">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/6281234567891" class="contact-btn" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent 3 -->
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" alt="Agent Photo">
+                </div>
+                <div class="agent-info">
+                    <h3>Ahmad Hidayat</h3>
+                    <p class="agent-title">Marketing Executive</p>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <i class="fa-solid fa-house-circle-check"></i>
+                            <span>38 Sold</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.8/5</span>
+                        </div>
+                    </div>
+                    <p class="agent-description">
+                        Berpengalaman dalam strategi pemasaran properti dan negosiasi harga terbaik.
+                    </p>
+                    <div class="agent-contact">
+                        <a href="tel:+6281234567892" class="contact-btn">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                        <a href="mailto:ahmad@pabelanresidence.com" class="contact-btn">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/6281234567892" class="contact-btn" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent 4 -->
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop" alt="Agent Photo">
+                </div>
+                <div class="agent-info">
+                    <h3>Diana Putri</h3>
+                    <p class="agent-title">Customer Relations Manager</p>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <i class="fa-solid fa-house-circle-check"></i>
+                            <span>41 Sold</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.9/5</span>
+                        </div>
+                    </div>
+                    <p class="agent-description">
+                        Fokus pada kepuasan pelanggan dengan pelayanan personal dan profesional.
+                    </p>
+                    <div class="agent-contact">
+                        <a href="tel:+6281234567893" class="contact-btn">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                        <a href="mailto:diana@pabelanresidence.com" class="contact-btn">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/6281234567893" class="contact-btn" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent 5 -->
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Agent Photo">
+                </div>
+                <div class="agent-info">
+                    <h3>Eko Prasetyo</h3>
+                    <p class="agent-title">Property Consultant</p>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <i class="fa-solid fa-house-circle-check"></i>
+                            <span>35 Sold</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.7/5</span>
+                        </div>
+                    </div>
+                    <p class="agent-description">
+                        Membantu klien menemukan rumah impian dengan pendekatan yang ramah dan detail.
+                    </p>
+                    <div class="agent-contact">
+                        <a href="tel:+6281234567894" class="contact-btn">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                        <a href="mailto:eko@pabelanresidence.com" class="contact-btn">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/6281234567894" class="contact-btn" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent 6 -->
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" alt="Agent Photo">
+                </div>
+                <div class="agent-info">
+                    <h3>Fitri Wijaya</h3>
+                    <p class="agent-title">Junior Property Consultant</p>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <i class="fa-solid fa-house-circle-check"></i>
+                            <span>28 Sold</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.8/5</span>
+                        </div>
+                    </div>
+                    <p class="agent-description">
+                        Energik dan responsif dalam membantu setiap kebutuhan properti Anda.
+                    </p>
+                    <div class="agent-contact">
+                        <a href="tel:+6281234567895" class="contact-btn">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                        <a href="mailto:fitri@pabelanresidence.com" class="contact-btn">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/6281234567895" class="contact-btn" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- CONTACT SECTION -->
 <div class="contact" id="Contact">
     <div class="container">
         <div class="contact-header">
@@ -180,9 +414,7 @@
         <div class="contact-container">
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-item-icon">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
+                    <i class="fa-solid fa-phone"></i>
                     <div>
                         <h3>Phone</h3>
                         <p>+62 123 4567 890</p>
@@ -247,6 +479,7 @@
         </div>
     </div>
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
