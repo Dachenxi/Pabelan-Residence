@@ -14,7 +14,7 @@
     --text-color: hsl(0, 0%, 29%);
     --secondary-text-color: hsl(43, 3%, 97%);
     --icon-color: hsl(82, 39%, 50%);
-    --padding-section: 2rem 0;
+    --padding-section: 2rem 1rem;
     --header-font-size: 2.5rem;
 }
 
@@ -319,7 +319,7 @@ input {
 
 .stats-item {
     flex: 1;
-    min-width: 150px;
+    min-width: 200px;
 }
 
 .stats-item i {
@@ -411,7 +411,7 @@ input {
     background: white;
     border-radius: 16px;
     max-width: 350px;
-    min-width: 350px;
+    min-width:  250px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -425,7 +425,7 @@ input {
 
 .property-image {
     position: relative;
-    height: 250px;
+    max-height: 250px;
     overflow: hidden;
 }
 
@@ -795,6 +795,7 @@ input {
 .agent-card {
     flex: 1;
     min-width: 200px;
+    max-width: 250px;
     background: var(--main-color);
     border-radius: 15px;
     overflow: hidden;
@@ -813,7 +814,8 @@ input {
 }
 
 .agent-image {
-    height: auto;
+    min-height: 250px;
+    max-height: 300px;
     overflow: hidden;
 }
 
@@ -1183,6 +1185,7 @@ input {
     gap: 1rem;
     background: white;
     padding: 2rem;
+    max-width: 900px;
     height: auto;
     border-radius: 16px;
     position: relative;
@@ -1195,7 +1198,7 @@ input {
 }
 
 .detail-property-image img {
-    max-width: 50%;
+    max-width: 75%;
     object-fit: cover;
     border-radius: 12px;
     margin: 1rem 0;
@@ -1207,12 +1210,14 @@ input {
 }
 
 .detail-property-info h2 {
-    font-size: 2.3rem;
+    font-size: 1.3rem;
     text-align: center;
 }
 
 .detail-property-stat {
     display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
     gap: 1rem;
     margin: 1rem 0;
 }
@@ -1314,6 +1319,14 @@ input {
     .home-slide.active .home-content .subtitle,
     .home-content .subtitle {
         font-size: 1rem;
+    }
+
+    .property-stat {
+        font-size: 1rem;
+    }
+
+    .detail-property-stat {
+        flex-direction: column;
     }
 
     .search-bar {
