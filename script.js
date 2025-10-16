@@ -25,6 +25,129 @@ const testimonialDict = [
     }
 ]
 
+const propertyDict = [
+    {
+        id: 1,
+        title: "Luxury Villa with Pool",
+        price: "$1,250,000",
+        location: "Beverly Hills, CA",
+        image: "https://i.ibb.co.com/chG8gVrn/rumah-uya-kuya-usai-dijarahjpg-20250831110054.jpg",
+        type: "Akasia",
+        beds: 5,
+        baths: 4,
+        area: "5,200 sq ft",
+        status: "For Sale"
+    },
+    {
+        id: 2,
+        title: "Modern Downtown Apartment",
+        price: "$750,000",
+        location: "New York, NY",
+        image: "https://i.ibb.co.com/tM9qZJxq/125236-723-kondisi-terkini-rumah.jpg",
+        type: "Akasia",
+        beds: 3,
+        baths: 2,
+        area: "2,100 sq ft",
+        status: "For Rent"
+    },
+    {
+        id: 3,
+        title: "Cozy Family House",
+        price: "$580,000",
+        location: "Austin, TX",
+        image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600",
+        type: "Bougenville",
+        beds: 4,
+        baths: 3,
+        area: "3,500 sq ft",
+        status: "For Sale"
+    },
+    {
+        id: 4,
+        title: "Beachfront Property",
+        price: "$2,100,000",
+        location: "Malibu, CA",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
+        type: "Bougenville",
+        beds: 6,
+        baths: 5,
+        area: "6,800 sq ft",
+        status: "For Sale"
+    },
+    {
+        id: 5,
+        title: "City Center Penthouse",
+        price: "$1,800,000",
+        location: "Miami, FL",
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600",
+        type: "Sapphire",
+        beds: 4,
+        baths: 3,
+        area: "4,200 sq ft",
+        status: "For Rent"
+    },
+    {
+        id: 6,
+        title: "Suburban Dream Home",
+        price: "$420,000",
+        location: "Portland, OR",
+        image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600",
+        type: "Sapphire",
+        beds: 3,
+        baths: 2,
+        area: "2,800 sq ft",
+        status: "For Sale"
+    },
+    {
+        id: 7,
+        title: "Mountain View Villa",
+        price: "$3,500,000",
+        location: "Aspen, CO",
+        image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600",
+        type: "Ruby",
+        beds: 7,
+        baths: 6,
+        area: "8,500 sq ft",
+        status: "For Sale"
+    },
+    {
+        id: 8,
+        title: "Urban Loft Space",
+        price: "$620,000",
+        location: "Chicago, IL",
+        image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600",
+        type: "Ruby",
+        beds: 2,
+        baths: 2,
+        area: "1,800 sq ft",
+        status: "For Rent"
+    },
+    {
+        id: 9,
+        title: "Prime Land Plot",
+        price: "$350,000",
+        location: "Seattle, WA",
+        image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600",
+        type: "Diamond",
+        beds: 0,
+        baths: 0,
+        area: "10,000 sq ft",
+        status: "For Sale"
+    },
+    {
+        id: 10,
+        title: "Prime Land Plot",
+        price: "$350,000",
+        location: "Seattle, WA",
+        image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600",
+        type: "Diamond",
+        beds: 0,
+        baths: 0,
+        area: "10,000 sq ft",
+        status: "For Sale"
+    }
+]
+
 // Pindahkan timer ke scope global agar bisa diakses fungsi lain
 let autoPlayTimer;
 
@@ -35,7 +158,8 @@ document.addEventListener("DOMContentLoaded", function() {
     initFilterButton();
     initStats();
     initTestimonials();
-    initFilters()
+    initFilters();
+    loadProperties()
 })
 
 function initNavigation() {
@@ -164,6 +288,50 @@ function animateCounter(element, target) {
     }, 30);
 }
 
+function loadProperties(filter = 'all') {
+    const grid = document.getElementById('propertiesGrid');
+    let filteredProperties = propertyDict;
+
+    if (filter !== 'all') {
+        filteredProperties = propertyDict.filter(p => p.type === filter);
+    }
+
+    grid.innerHTML = filteredProperties.map(property => `
+        <div class="property-card" data-type="${property.type}">
+            <div class="property-image">
+                <img src="${property.image}" alt="${property.title}">
+                <span class="property-badge">${property.status}</span>
+            </div>
+            <div class="property-content">
+                <div class="property-price">${property.price}</div>
+                <h3 class="property-title">${property.title}</h3>
+                <div class="property-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>${property.location}</span>
+                </div>
+                <div class="property-features">
+                    ${property.beds > 0 ? `
+                    <div class="feature">
+                        <i class="fas fa-bed"></i>
+                        <span>${property.beds} Beds</span>
+                    </div>
+                    ` : ''}
+                    ${property.baths > 0 ? `
+                    <div class="feature">
+                        <i class="fas fa-bath"></i>
+                        <span>${property.baths} Baths</span>
+                    </div>
+                    ` : ''}
+                    <div class="feature">
+                        <i class="fas fa-ruler-combined"></i>
+                        <span>${property.area}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
 function initTestimonials() {
     const slider = document.getElementById('testimonialSlider');
     const dotsContainer = document.getElementById('testimonialSlideControls');
@@ -241,7 +409,9 @@ function initFilters() {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
+            
+            const filter = btn.getAttribute('data-filter');
+            loadProperties(filter);
         });
     });
 
@@ -253,4 +423,93 @@ function initFilters() {
             tab.classList.add('active');
         });
     });
+}
+
+// Property Card Click Handler
+document.addEventListener('click', function(e) {
+    const card = e.target.closest('.property-card');
+    if (card && !e.target.closest('.property-favorite')) {
+        const propertyId = Array.from(card.parentElement.children).indexOf(card) + 1;
+        showPropertyDetails(propertyId);
+    }
+});
+
+// Fungsi untuk menutup modal
+function closeModal() {
+    const modal = document.getElementById('propertyModal');
+    modal.classList.remove('active');
+}
+
+// Fungsi utama Anda yang sudah diperbaiki
+function showPropertyDetails(id) {
+    const property = propertyDict[id - 1];
+    if (!property) return;
+
+    // 1. Targetkan modal yang SUDAH ADA, jangan buat baru
+    const modal = document.getElementById('propertyModal');
+
+    // 2. Isi konten modal dengan innerHTML
+    modal.innerHTML = `
+        <div class="detail-content">
+            <button class="close-modal" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button> 
+            <div class="detail-property-image">
+                <img src="${property.image}" alt="${property.title}">
+            </div>
+            <div class="detail-property-info">
+                <h2>${property.title}</h2>
+                <div class="detail-property-stat">
+                    <div class="property-stat-group">
+                        <div class="property-stat">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <strong>Price:</strong> ${property.price}
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-comments-dollar"></i>
+                            <strong>Status:</strong> ${property.status}
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                            <strong>Location:</strong> ${property.location}
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-building-columns"></i>
+                            <strong>Type:</strong> ${property.type.charAt(0).toUpperCase() + property.type.slice(1)}
+                        </div>
+                    </div>
+                    <div class="property-stat-group">
+                        <div>
+                            <i class="fa-solid fa-bed-front"></i>
+                            <strong>Bedrooms:</strong> ${property.beds}
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-bath"></i>
+                            <strong>Bathrooms:</strong> ${property.baths}
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-ruler-horizontal"></i>
+                            <strong>Area:</strong> ${property.area}
+                        </div>
+                    </div>
+                    
+                </div>
+                <p style="margin: 1.5rem 0; line-height: 1.8; color: var(--text-color);">
+                    This stunning ${property.type} offers exceptional living spaces with modern amenities. 
+                    Located in the prestigious ${property.location} area, this property provides the perfect 
+                    combination of luxury and comfort. Features include spacious rooms, high-end finishes, 
+                    and premium appliances throughout.
+                </p>
+                <div class="detail-btn">
+                    <button class="btn-primary" onclick="alert('Schedule a tour feature coming soon!')">
+                        <i class="fas fa-calendar"></i> Schedule Tour
+                    </button>
+                    <button class="btn-secondary" onclick="alert('Contact agent feature coming soon!')">
+                        <i class="fas fa-phone"></i> Contact Agent
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // 3. Tampilkan modal dengan menambahkan kelas 'active'
+    modal.classList.add('active');
 }
