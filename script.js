@@ -36,7 +36,7 @@ const propertyDict = [
         beds: 5,
         baths: 4,
         area: "5,200 sq ft",
-        status: "For Sale"
+        status: "Dijual"
     },
     {
         id: 2,
@@ -48,7 +48,7 @@ const propertyDict = [
         beds: 3,
         baths: 2,
         area: "2,100 sq ft",
-        status: "For Rent"
+        status: "Disewakan"
     },
     {
         id: 3,
@@ -60,7 +60,7 @@ const propertyDict = [
         beds: 4,
         baths: 3,
         area: "3,500 sq ft",
-        status: "For Sale"
+        status: "Dijual"
     },
     {
         id: 4,
@@ -72,7 +72,7 @@ const propertyDict = [
         beds: 6,
         baths: 5,
         area: "6,800 sq ft",
-        status: "For Sale"
+        status: "Disewakan"
     },
     {
         id: 5,
@@ -84,7 +84,7 @@ const propertyDict = [
         beds: 4,
         baths: 3,
         area: "4,200 sq ft",
-        status: "For Rent"
+        status: "Disewakan"
     },
     {
         id: 6,
@@ -96,7 +96,7 @@ const propertyDict = [
         beds: 3,
         baths: 2,
         area: "2,800 sq ft",
-        status: "For Sale"
+        status: "Dijual"
     },
     {
         id: 7,
@@ -108,7 +108,7 @@ const propertyDict = [
         beds: 7,
         baths: 6,
         area: "8,500 sq ft",
-        status: "For Sale"
+        status: "Dijual"
     },
     {
         id: 8,
@@ -120,7 +120,7 @@ const propertyDict = [
         beds: 2,
         baths: 2,
         area: "1,800 sq ft",
-        status: "For Rent"
+        status: "Disewakan"
     },
     {
         id: 9,
@@ -132,7 +132,7 @@ const propertyDict = [
         beds: 0,
         baths: 0,
         area: "10,000 sq ft",
-        status: "For Sale"
+        status: "Dijual"
     },
     {
         id: 10,
@@ -144,7 +144,7 @@ const propertyDict = [
         beds: 0,
         baths: 0,
         area: "10,000 sq ft",
-        status: "For Sale"
+        status: "Disewakan"
     }
 ]
 
@@ -159,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function() {
     initStats();
     initTestimonials();
     initFilters();
+    searchProperties();
     loadProperties()
 })
 
@@ -423,6 +424,92 @@ function initFilters() {
             tab.classList.add('active');
         });
     });
+}
+
+// Fungsi Search di Search Bar
+function searchProperties() {
+    const searchButton = document.getElementById('searchBarButton')
+    searchButton.addEventListener('click', () => {
+        const statusFilter = document.getElementsByClassName('search-tab active')[0].value;
+        const locationInput = document.getElementById('locationFilter').value;
+        const typeInput = document.getElementById('filterType').value;
+        const priceInput = document.getElementById('filterPrice').value;
+
+        if (!locationInput && typeInput === 'all' && priceInput === 'all') {
+            alert("Tolong masukkan setidaknya satu kriteria pencarian.");
+            loadProperties('all');
+            return;
+        }
+
+        let filteredProperties = propertyDict;
+
+        if (statusFilter) {
+            filteredProperties = filteredProperties.filter(p => 
+                p.status.toLowerCase() === statusFilter.toLowerCase()
+            );
+        }
+
+        if (locationInput) {
+            filteredProperties = filteredProperties.filter(p => 
+                p.location.toLowerCase().includes(locationInput.toLowerCase())
+            );
+        }
+
+        if (typeInput) {
+            filteredProperties = filteredProperties.filter(p => 
+                p.type.toLowerCase() === typeInput.toLowerCase()
+            );
+        }
+
+        if (priceInput) {
+            filteredProperties = filteredProperties.filter(p => {
+                const priceValue = parseInt(p.price.replace(/[^0-9]/g, ''));
+                if (priceInput === '') return true;
+                if (priceInput === '500') return priceValue <= 500000;
+                if (priceInput === '500-1000') return priceValue > 500000 && priceValue <= 1000000;
+                if (priceInput === '1000-2000') return priceValue > 1000000 && priceValue <= 2000000;
+                if (priceInput === '2000+') return priceValue > 2000000;
+                return true;
+            });
+        }
+
+
+        const grid = document.getElementById('propertiesGrid');
+        grid.innerHTML = filteredProperties.map(property => `
+            <div class="property-card" data-type="${property.type}">
+                <div class="property-image">
+                    <img src="${property.image}" alt="${property.title}">
+                    <span class="property-badge">${property.status}</span>
+                </div>
+                <div class="property-content">
+                    <div class="property-price">${property.price}</div>
+                    <h3 class="property-title">${property.title}</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>${property.location}</span>
+                    </div>
+                    <div class="property-features">
+                        ${property.beds > 0 ? `
+                        <div class="feature">
+                            <i class="fas fa-bed"></i>
+                            <span>${property.beds} Beds</span>
+                        </div>
+                        ` : ''}
+                        ${property.baths > 0 ? `
+                        <div class="feature">
+                            <i class="fas fa-bath"></i>
+                            <span>${property.baths} Baths</span>
+                        </div>
+                        ` : ''}
+                        <div class="feature">
+                            <i class="fas fa-ruler-combined"></i>
+                            <span>${property.area}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    })
 }
 
 // Property Card Click Handler

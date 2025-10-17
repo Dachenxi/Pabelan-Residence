@@ -59,7 +59,7 @@ input {
 
 .navbar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: auto;
 }
@@ -230,6 +230,7 @@ input {
 }
 
 .search-tab {
+    flex: 1;
     background: none;
     border: none;
     padding: 0.7rem 1.2rem;
@@ -813,7 +814,8 @@ input {
 }
 
 .agent-image {
-    height: auto;
+    max-height: 225px;
+    min-height: 225px;
     overflow: hidden;
 }
 

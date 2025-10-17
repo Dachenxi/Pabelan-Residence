@@ -33,12 +33,6 @@
         <div class="menu-toggle" id="menu-toggle">
             <i class="fa-solid fa-bars-staggered"></i>
         </div>
-        <div class="search">
-            <button class="btn-primary">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                Search
-            </button>
-        </div>
     </div>
 </div>
 
@@ -73,9 +67,9 @@
     <!-- Search Bar -->
     <div class="search-bar">
         <div class="search-tabs-container">
-            <button class="search-tab active"><i class="fa-solid fa-cart-shopping"></i> Beli</button>
-            <button class="search-tab"><i class="fa-solid fa-house"></i> Sewa</button>
-            <button class="search-tab"><i class="fa-solid fa-tag"></i> Terjual</button>
+            <button class="search-tab active" value="Dijual"><i class="fa-solid fa-cart-shopping"></i> Beli</button>
+            <button class="search-tab" value="Disewakan"><i class="fa-solid fa-house"></i> Sewa</button>
+            <button class="search-tab" value="Terjual"><i class="fa-solid fa-tag"></i> Terjual</button>
         </div>
         <div class="search-filter-container">
             <div class="filter-items">
@@ -88,25 +82,25 @@
                 <label for="filterType"></label>
                 <select name="filterType" id="filterType">
                     <option value="">Tipe Rumah</option>
-                    <option value="Akasia">Tipe Akasia (45/90)</option>
-                    <option value="Bougenville">Tipe Bougenville (60/105)</option>
-                    <option value="Sapphire">Tipe Sapphire (75/120 - 2 Lantai)</option>
-                    <option value="Ruby">Tipe Ruby (90/150 - 2 Lantai)</option>
-                    <option value="Diamond">Tipe Diamond (120/180 - Premium)</option>
+                    <option value="Akasia">Tipe Akasia</option>
+                    <option value="Bougenville">Tipe Bougenville</option>
+                    <option value="Sapphire">Tipe Sapphire</option>
+                    <option value="Ruby">Tipe Ruby</option>
+                    <option value="Diamond">Tipe Diamond</option>
                 </select>
             </div>
             <div class="filter-items">
                 <i class="fa-solid fa-magnifying-glass-dollar"></i>
                 <label for="filterPrice"></label>
                 <select name="filterPrice" id="filterPrice">
-                    <option value="0-500">Range Harga</option>
+                    <option value="">Range Harga</option>
                     <option value="0-500">$0 - $500K</option>
                     <option value="500-1000">$500K - $1M</option>
                     <option value="1000-2000">$1M - $2M</option>
                     <option value="2000+">$2M+</option>
                 </select>
             </div>
-            <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+            <button class="btn-search" id="searchBarButton"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
         </div>
     </div>
 </div>
@@ -257,15 +251,15 @@
             <!-- Agent 2 -->
             <div class="agent-card">
                 <div class="agent-image">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="Agent Photo">
+                    <img src="https://i.ibb.co.com/TD5fNcS9/Giga2.jpg" alt="Agent Photo">
                 </div>
                 <div class="agent-info">
                     <h3>Giga Hidro Madani</h3>
-                    <p class="agent-title">Property Investment Advisor</p>
+                    <p class="agent-title">Dewa Property</p>
                     <div class="agent-stats">
                         <div class="stat">
                             <i class="fa-solid fa-house-circle-check"></i>
-                            <span>52 Sold</span>
+                            <span>1312 Sold</span>
                         </div>
                         <div class="stat">
                             <i class="fa-solid fa-star"></i>
