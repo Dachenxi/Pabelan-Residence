@@ -347,7 +347,7 @@ input {
     background: #f8f9fa;
 }
 
-.content img {
+.property img {
     width: 100%;
 }
 
@@ -426,14 +426,14 @@ input {
 
 .property-image {
     position: relative;
+    min-height: 250px;
     max-height: 250px;
     overflow: hidden;
 }
 
 .property-image img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
+    width: 100%;
     transition: transform 0.3s ease;
 }
 

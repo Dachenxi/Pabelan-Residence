@@ -473,6 +473,11 @@ function searchProperties() {
             });
         }
 
+        window.scrollTo({
+                    top: document.getElementById('propertiesGrid').offsetTop - document.querySelector('.header').offsetHeight,
+                    behavior: 'smooth'
+                });
+
 
         const grid = document.getElementById('propertiesGrid');
         grid.innerHTML = filteredProperties.map(property => `
