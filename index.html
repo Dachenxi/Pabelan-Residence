@@ -117,59 +117,6 @@
       <button class="home-nav prev" id="homePrev">
         <i class="fa-solid fa-chevron-left"></i>
       </button>
-
-      <!-- Search Bar -->
-      <div class="search-bar">
-        <div class="search-tabs-container">
-          <button class="search-tab active" value="Dijual">
-            <i class="fa-solid fa-cart-shopping"></i> Beli
-          </button>
-          <button class="search-tab" value="Disewakan">
-            <i class="fa-solid fa-house"></i> Sewa
-          </button>
-          <button class="search-tab" value="Terjual">
-            <i class="fa-solid fa-tag"></i> Terjual
-          </button>
-        </div>
-        <div class="search-filter-container">
-          <div class="filter-items">
-            <i class="fa-solid fa-magnifying-glass-location"></i>
-            <label for="locationFilter"></label>
-            <input
-              type="text"
-              name="locationFilter"
-              id="locationFilter"
-              placeholder="Lokasi"
-            />
-          </div>
-          <div class="filter-items">
-            <i class="fa-solid fa-building-magnifying-glass"></i>
-            <label for="filterType"></label>
-            <select name="filterType" id="filterType">
-              <option value="">Tipe Rumah</option>
-              <option value="Akasia">Tipe Akasia</option>
-              <option value="Bougenville">Tipe Bougenville</option>
-              <option value="Sapphire">Tipe Sapphire</option>
-              <option value="Ruby">Tipe Ruby</option>
-              <option value="Diamond">Tipe Diamond</option>
-            </select>
-          </div>
-          <div class="filter-items">
-            <i class="fa-solid fa-magnifying-glass-dollar"></i>
-            <label for="filterPrice"></label>
-            <select name="filterPrice" id="filterPrice">
-              <option value="">Range Harga</option>
-              <option value="0-500">$0 - $500K</option>
-              <option value="500-1000">$500K - $1M</option>
-              <option value="1000-2000">$1M - $2M</option>
-              <option value="2000+">$2M+</option>
-            </select>
-          </div>
-          <button class="btn-search" id="searchBarButton">
-            <i class="fa-solid fa-magnifying-glass"></i> Search
-          </button>
-        </div>
-      </div>
     </div>
 
     <!-- STATS SECTION -->
@@ -200,18 +147,6 @@
           <h2>Featured Properties</h2>
           <p>Discover our handpicked selection of premium properties</p>
         </div>
-
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="Akasia">Akasia</button>
-          <button class="filter-btn" data-filter="Bougenville">
-            Bougenville
-          </button>
-          <button class="filter-btn" data-filter="Sapphire">Sapphire</button>
-          <button class="filter-btn" data-filter="Ruby">Ruby</button>
-          <button class="filter-btn" data-filter="Diamond">Diamond</button>
-        </div>
-
         <div class="properties-grid" id="propertiesGrid">
           <!-- Properties will be dynamically loaded -->
         </div>
@@ -536,51 +471,13 @@
                 <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
               </div>
             </div>
-            <div class="social-media">
-              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-              <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
-              <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-              <a href="#"><i class="fa-brands fa-square-linkedin"></i></a>
-            </div>
           </div>
-          <form class="contact-form">
-            <div class="form-row">
-              <label>
-                <input
-                  class="form-input"
-                  type="text"
-                  placeholder="Your Name"
-                  required
-                />
-              </label>
-              <label>
-                <input
-                  class="form-input"
-                  type="email"
-                  placeholder="Your Email"
-                  required
-                />
-              </label>
+            <div class="social-media">
+                <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-square-linkedin"></i></a>
             </div>
-            <div class="form-row">
-              <label>
-                <input type="tel" placeholder="Phone Number" required />
-              </label>
-              <label>
-                <select required>
-                  <option value="">Select Service</option>
-                  <option value="buy">Buy Property</option>
-                  <option value="sell">Sell Property</option>
-                  <option value="rent">Rent Property</option>
-                  <option value="consult">Consultation</option>
-                </select>
-              </label>
-            </div>
-            <label>
-              <textarea placeholder="Your Message" rows="5" required></textarea>
-            </label>
-            <button type="submit" class="btn-primary">Send Message</button>
-          </form>
         </div>
       </div>
     </div>
@@ -614,15 +511,6 @@
               <li><a href="#">Apartments</a></li>
               <li><a href="#">Villas</a></li>
               <li><a href="#">Commercial</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="#">Market Insights</a></li>
-              <li><a href="#">Property Guide</a></li>
-              <li><a href="#">Mortgage Calculator</a></li>
-              <li><a href="#">Blog</a></li>
             </ul>
           </div>
         </div>

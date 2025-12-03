@@ -31,7 +31,7 @@ const propertyDict = [
         title: "Luxury Villa with Pool",
         price: "$1,250,000",
         location: "Beverly Hills, CA",
-        image: "https://i.ibb.co.com/chG8gVrn/rumah-uya-kuya-usai-dijarahjpg-20250831110054.jpg",
+        image: "https://plus.unsplash.com/premium_photo-1733760125497-cd51a05afc6c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         type: "Akasia",
         beds: 5,
         baths: 4,
@@ -43,7 +43,7 @@ const propertyDict = [
         title: "Modern Downtown Apartment",
         price: "$750,000",
         location: "New York, NY",
-        image: "https://i.ibb.co.com/tM9qZJxq/125236-723-kondisi-terkini-rumah.jpg",
+        image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         type: "Akasia",
         beds: 3,
         baths: 2,
@@ -133,18 +133,6 @@ const propertyDict = [
         baths: 0,
         area: "10,000 sq ft",
         status: "Dijual"
-    },
-    {
-        id: 10,
-        title: "Prime House",
-        price: "$127,000",
-        location: "Pabelan, Jawa Tengah",
-        image: "images/Foto/RumahJKW.jpg",
-        type: "Diamond",
-        beds: 0,
-        baths: 0,
-        area: "10,000 sq ft",
-        status: "Disewakan"
     }
 ]
 
@@ -153,14 +141,13 @@ let autoPlayTimer;
 
 document.addEventListener("DOMContentLoaded", function() {
     initHamburgerMenu();
+    loadProperties();
     initNavigation();
     initMenuSlider();
     initFilterButton();
     initStats();
     initTestimonials();
-    initFilters();
     searchProperties();
-    loadProperties()
 })
 
 function initNavigation() {
@@ -289,15 +276,10 @@ function animateCounter(element, target) {
     }, 30);
 }
 
-function loadProperties(filter = 'all') {
+function loadProperties() {
     const grid = document.getElementById('propertiesGrid');
-    let filteredProperties = propertyDict;
 
-    if (filter !== 'all') {
-        filteredProperties = propertyDict.filter(p => p.type === filter);
-    }
-
-    grid.innerHTML = filteredProperties.map(property => `
+    grid.innerHTML = propertyDict.map(property => `
         <div class="property-card" data-type="${property.type}">
             <div class="property-image">
                 <img src="${property.image}" alt="${property.title}">
@@ -401,29 +383,6 @@ function showTestimonial(index) {
 
     items[index].classList.add('active');
     dots[index].classList.add('active');
-}
-
-function initFilters() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            const filter = btn.getAttribute('data-filter');
-            loadProperties(filter);
-        });
-    });
-
-    // Search tabs
-    const searchTabs = document.querySelectorAll('.search-tab');
-    searchTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            searchTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-        });
-    });
 }
 
 // Fungsi Search di Search Bar

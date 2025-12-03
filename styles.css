@@ -417,6 +417,7 @@ input {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     cursor: pointer;
+    z-index: 5;
 }
 
 .property-card:hover {
@@ -965,9 +966,9 @@ input {
 
 .contact-info {
     display: flex;
-    flex-direction: column;
     flex-grow: 1;
     gap: 2rem;
+    justify-content: space-between;
 }
 
 .contact-item {
@@ -1364,6 +1365,9 @@ input {
 
     .agent-image {
         height: 250px;
+    }
+    .contact-info {
+        flex-direction: column;
     }
 }
 
