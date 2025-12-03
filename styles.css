@@ -426,8 +426,7 @@ input {
 
 .property-image {
     position: relative;
-    min-height: 250px;
-    max-height: 250px;
+    height: 200px;
     overflow: hidden;
 }
 
